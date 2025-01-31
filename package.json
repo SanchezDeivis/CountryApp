@@ -5,8 +5,14 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:href": "ng build --base-href ./",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "delete:docs": "del docs",
+
+    "copy:dist": "npx copyfiles dist/country-app/**/* docs -f",
+
+    "build:github": "npm rum delete:docs && npm rum build:href && npm rum copy:dist"
   },
   "private": true,
   "dependencies": {
